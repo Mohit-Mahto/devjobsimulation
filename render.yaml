@@ -1,0 +1,25 @@
+services:
+  # Backend Flask API
+  - type: web
+    name: devjob-backend
+    env: python
+    buildCommand: "cd backend && pip install -r requirements.txt"
+    startCommand: "cd backend && gunicorn app:create_app()"
+    envVars:
+      - key: MONGO_URI
+        sync: false # Set this in Render Dashboard
+      - key: JWT_SECRET
+        sync: false # Set this in Render Dashboard
+      - key: JUDGE0_API_KEY
+        sync: false # Set this in Render Dashboard
+      - key: JUDGE0_URL
+        value: "https://judge0-ce.p.rapidapi.com"
+
+  # Frontend Static Site
+  - type: web
+    name: devjob-frontend
+    env: static
+    buildCommand: ""
+    staticPublishPath: "./frontend"
+    # To connect frontend to backend in production, we might need a build step or replace the API_BASE in JS.
+    # For now, we will assume API_BASE is configured to point to the deployed backend URL manually or via environment variables in a build process if added.

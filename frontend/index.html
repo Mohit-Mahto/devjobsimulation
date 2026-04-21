@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Devjob Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Devjob Simulator</div>
+        <div class="nav-links">
+            <span class="user-badge" id="userPlan">FREE</span>
+            <a href="index.html">Dashboard</a>
+            <a href="upgrade.html">Upgrade</a>
+            <button id="logoutBtn" class="btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="editor-section">
+            <textarea id="codeEditor" class="code-editor" placeholder="Write your Python code here...&#10;For example:&#10;print('Hello World')&#10;for i in range(5):&#10;    print(i)"></textarea>
+            <div style="display: flex; gap: 1rem;">
+                <button id="runBtn" class="btn btn-accent">Run Code</button>
+                <button id="predictBtn" class="btn">Predict Role</button>
+            </div>
+            <div class="console">
+                <h3>Output Console</h3>
+                <div id="outputConsole" class="output">Run code to see output here...</div>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <div class="card">
+                <h3>Your Stats</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                    <span>Experience (XP)</span>
+                    <span id="xpDisplay" class="stat-value">0</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Predicted Role</span>
+                    <span id="roleDisplay" style="color: var(--secondary-color); font-weight: bold;">Beginner</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Current Tasks</h3>
+                <ul class="task-list" id="taskList">
+                    <li>1. Write a Hello World script</li>
+                    <li>2. Create a for loop</li>
+                    <li>3. Import a library</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
