@@ -13,7 +13,8 @@ def create_app():
     # Connect to MongoDB directly
     try:
         app.mongo_client = MongoClient(app.config["MONGO_URI"])
-        app.db = app.mongo_client.get_database() # Uses database name from URI
+        # Use 'devjob' database to prevent conflicting with other apps on the same cluster
+        app.db = app.mongo_client["devjob"]
         # Test connection
         app.mongo_client.admin.command('ping')
         print("Connected to MongoDB successfully!")
