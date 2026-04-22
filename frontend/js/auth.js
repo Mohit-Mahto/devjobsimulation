@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://devjob-backend.onrender.com/api';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Check if we are on the login page

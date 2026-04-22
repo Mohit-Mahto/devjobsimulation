@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://devjob-backend.onrender.com/api';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Only run on dashboard
