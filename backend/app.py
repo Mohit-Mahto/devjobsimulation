@@ -30,10 +30,6 @@ def create_app():
     def health():
         return jsonify({"status": "healthy"}), 200
 
-    # Ensure indexes
-    if hasattr(app, 'db'):
-        app.db.users.create_index("email", unique=True)
-
     return app
 
 # Expose app for gunicorn
